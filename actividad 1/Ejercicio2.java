@@ -8,8 +8,8 @@ public class Ejercicio2 {
         for (int elemento : arreglo) {
             System.out.printf(elemento+" ");
         }
-
     }
+
     public static void leerArreglo(int[] arreglo) {
         Scanner entrada = new Scanner(System.in);
         for (int i = 0; i < arreglo.length; i++) {
@@ -27,5 +27,6 @@ public class Ejercicio2 {
                 }
             }
         }
+        entrada.close();
     }
 }
