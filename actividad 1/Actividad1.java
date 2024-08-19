@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class actividad1 {
+public class Actividad1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Introduce un número: ");

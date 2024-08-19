@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class actividad4 {
+public class Actividad4 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.printf("Introduce el tamaño del arreglo: ");
