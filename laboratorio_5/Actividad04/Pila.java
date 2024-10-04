@@ -12,7 +12,7 @@ public class Pila <E> {
     }
     public void push(E valorAMeter) {
         if ( superior == tamano -1 ) { // si la pila está llena
-            throw new ExcepcionPilaLlena(String.format("La Pila esta llena, no se puede meter %s", valorAMeter));
+            throw new ExcepcionPilaLlena(String.format("La Pila esta llena, no se puede meter: %s", valorAMeter));
         }
         // Añade valorAMetar en la Pila
         elementos[++superior] = valorAMeter;
@@ -29,6 +29,9 @@ public class Pila <E> {
             return false;
         }
         if ( this.tamano != otraPila.tamano ) {
+            return false;
+        }
+        if ( this.superior != otraPila.superior ) {
             return false;
         }
         for ( int i = 0; i < this.tamano; i++ ) {

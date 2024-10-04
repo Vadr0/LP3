@@ -23,4 +23,8 @@ public class Pila <E> {
         }
         return elementos[superior--]; // elimina y devuelve el ultimo
     }
+    public static void main(String[] args) {
+        Pila <String> pila = new Pila<String> (10);
+
+    }
 }
