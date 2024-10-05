@@ -1,48 +1,49 @@
 package Actividad04;
 
-public class Pila <E> {
-    private final int tamano;
-    private int superior;
-    private E[] elementos;
+// clase generica llamada Pila
+public class Pila<E> {
+    private final int tamano; // tamaño maximo de la pila
+    private int superior; // indice del elemento superior
+    private E[] elementos; // arreglo para los elementos
 
+    // constructor que inicializa la pila
     public Pila(int tamano) {
-        this.tamano = tamano > 0 ? tamano : 10;
-        this.superior = -1;
-        elementos = (E[]) new Object[tamano];
+        this.tamano = tamano > 0 ? tamano : 10; // establece tamaño
+        this.superior = -1; // inicializa el indice superior
+        elementos = (E[]) new Object[tamano]; // crea el arreglo
     }
+
+    // agrega un elemento a la pila
     public void push(E valorAMeter) {
-        if ( superior == tamano -1 ) { // si la pila está llena
+        if (superior == tamano - 1) { // si la pila está llena
             throw new ExcepcionPilaLlena(String.format("La Pila esta llena, no se puede meter: %s", valorAMeter));
         }
-        // Añade valorAMetar en la Pila
-        elementos[++superior] = valorAMeter;
+        elementos[++superior] = valorAMeter; // añade el elemento
     }
+
+    // elimina y devuelve el elemento superior
     public E pop() {
-        if ( superior == -1 ) { // Si la pila está vacíá
+        if (superior == -1) { // si la pila está vacía
             throw new ExceptionPilaVacia("La Pila esta vacia, no se puede sacar");
         }
-        return elementos[superior--]; // elimina y devuelve el ultimo
+        return elementos[superior--]; // devuelve y decrementa
     }
 
+    // compara si dos pilas son iguales
     public boolean equals(Pila<E> otraPila) {
-        if ( otraPila == null ) {
-            return false;
+        if (otraPila == null || this.tamano != otraPila.tamano || this.superior != otraPila.superior) {
+            return false; // verifica null y tamaños
         }
-        if ( this.tamano != otraPila.tamano ) {
-            return false;
-        }
-        if ( this.superior != otraPila.superior ) {
-            return false;
-        }
-        for ( int i = 0; i < this.tamano; i++ ) {
-            if ( elementos[i] != otraPila.elementos[i] ) {
-                return false;
+        for (int i = 0; i <= this.superior; i++) {
+            if (elementos[i] != otraPila.elementos[i]) {
+                return false; // compara elementos
             }
         }
-        return true;
+        return true; // son iguales
     }
 
+    // obtiene el indice del elemento superior
     public int getSuperior() {
-        return superior;
+        return superior; // retorna el indice
     }
 }
